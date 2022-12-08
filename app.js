@@ -29,24 +29,26 @@ app.use(async (ctx, next) => {
   }
 });
 
-router.get('/', (ctx, next) => {
-  ctx.body = 'Main';
+router.get('/', async ctx => {
+  await ctx.render('index')
 });
 
-router.get('/projects', (ctx) => {
-  ctx.body = 'Projects'
+router.get('/projects', async ctx => {
+  await ctx.render('projects')
 });
 
-router.get('/projects/:project_id', (ctx) => {
-  ctx.body = 'Projects ID: ' + ctx.params.project_id
+router.get('/projects/:project_id', async ctx => {
+  //ctx.params.project_id
+  await ctx.render('project_entry')
 });
 
-router.get('/blog', (ctx) => {
-  ctx.body = 'Blog'
+router.get('/blog', async ctx => {
+  await ctx.render('blog')
 })
 
-router.get('/blog/:blog_id', (ctx) => {
-  ctx.body = 'Blog ID: ' + ctx.params.blog_id
+router.get('/blog/:blog_id', async ctx => {
+  //ctx.params.blog_id
+  await ctx.render('blog_entry')
 })
 
 app.use(router.routes())
