@@ -1,0 +1,23 @@
+{
+  "name": "portfolio_website",
+  "version": "1.0.0",
+  "description": "Charles Barry's Portfolio Website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doodleblob/website.git"
+  },
+  "author": "Charles Barry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doodleblob/website/issues"
+  },
+  "homepage": "https://github.com/doodleblob/website#readme",
+  "dependencies": {
+    "koa": "^2.14.1"
+  }
+}
