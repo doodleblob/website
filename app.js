@@ -27,7 +27,7 @@ app.use(async (ctx, next) => {
   } catch (err) {
     console.log(err.status)
     ctx.status = err.status || 500
-    ctx.body = `Error: ${err.status}\n${err.message}`
+    await ctx.render('error', { errorcode: ctx.status })
   }
 })
 
@@ -36,6 +36,7 @@ router.get('/', async ctx => {
 })
 
 router.get('/:page', async ctx => {
+  if (ctx.params.page === 'error') ctx.throw(404)
   try {
     await ctx.render(ctx.params.page)
   } catch (e) {
