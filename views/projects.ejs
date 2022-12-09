@@ -1,2 +1,36 @@
-<h2>Projects</h2>
-TODO
+<html lang="en">
+    
+    <%- include('partials/head') %>
+
+    <body>
+        <header>
+
+        </header>
+
+        <div class="container">
+            <h1 class="mb-4">Projects</h1>
+            
+            <% articles.forEach(article => { %>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= article.title %>
+                        </h4>
+                        <div class="card-subtitle text muted mb-2">
+                            <%= article.timestamp.toLocaleDateString() %>
+                        </div>
+                        <div class="card-text mb-2">
+                            <%= article.description %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <footer>
+
+        </footer>
+
+    </body>
+
+</html>

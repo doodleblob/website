@@ -30,8 +30,9 @@ app.use(async (ctx, next) => {
   } catch (err) {
     console.log(err.status)
     ctx.status = err.status || 500
+    console.log(err.message)
     try {
-      await ctx.render('error', { errorcode: ctx.status })
+      await ctx.render('error', { errorcode: ctx.status, errormessage: err.message })
     } catch (e) {
       ctx.body = ctx.status
     }
