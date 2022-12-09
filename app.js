@@ -7,6 +7,9 @@ const serve = require('koa-static')
 
 const path = require('path')
 
+const projectRouter = require('./routes/projects')
+const blogRouter = require('./routes/blog')
+
 const defaultPort = 1337
 const port = process.env.PORT || defaultPort
 
@@ -35,21 +38,8 @@ router.get('/', async ctx => {
   await ctx.render('main')
 })
 
-router.get('/:page', async ctx => {
-  try {
-    await ctx.render(ctx.params.page)
-  } catch (e) {
-    ctx.throw(404)
-  }
-})
-
-router.get('/:page/:page_id', async ctx => {
-  try {
-    await ctx.render(`${ctx.params.page}_entry`)
-  } catch (e) {
-    ctx.throw(404)
-  }
-})
+router.use('/projects', projectRouter.routes(), projectRouter.allowedMethods())
+router.use('/blog', blogRouter.routes(), blogRouter.allowedMethods())
 
 app.use(serve('public'))
 
