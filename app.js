@@ -16,7 +16,7 @@ const router = new Router()
 render(app, {
   root: path.join(__dirname, 'views'),
   layout: false,
-  viewExt: 'html',
+  viewExt: 'ejs',
   cache: false
 })
 
@@ -27,7 +27,11 @@ app.use(async (ctx, next) => {
   } catch (err) {
     console.log(err.status)
     ctx.status = err.status || 500
-    await ctx.render('error', { errorcode: ctx.status })
+    try {
+      await ctx.render('error', { errorcode: ctx.status })
+    } catch (e) {
+      ctx.body = ctx.status
+    }
   }
 })
 
