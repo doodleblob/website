@@ -1,8 +1,10 @@
 'use strict';
 
 const Koa = require('koa');
-const Router = require('@koa/router');
 const render = require('koa-ejs');
+const Router = require('@koa/router');
+const serve = require('koa-static')
+
 const path = require('path');
 
 const defaultPort = 1337
@@ -25,29 +27,31 @@ app.use(async (ctx, next) => {
   } catch(err) {
     console.log(err.status)
     ctx.status = err.status || 500;
-    ctx.body = `Error ${err.status}\n${err.message}`;
+    ctx.body = `Error: ${err.status}\n${err.message}`;
   }
 });
 
-router.get('/', (ctx, next) => {
-  ctx.body = 'Main';
+router.get('/', async ctx => {
+  await ctx.render('main')
 });
 
-router.get('/projects', (ctx) => {
-  ctx.body = 'Projects'
+router.get('/:page', async ctx => {
+  try {
+    await ctx.render(ctx.params.page)
+  } catch (e) {
+    ctx.throw(404)
+  }
 });
 
-router.get('/projects/:project_id', (ctx) => {
-  ctx.body = 'Projects ID: ' + ctx.params.project_id
+router.get('/:page/:page_id', async ctx => {
+  try {
+    await ctx.render( `${ctx.params.page}_entry`)
+  } catch (e) {
+    ctx.throw(404)
+  }
 });
 
-router.get('/blog', (ctx) => {
-  ctx.body = 'Blog'
-})
-
-router.get('/blog/:blog_id', (ctx) => {
-  ctx.body = 'Blog ID: ' + ctx.params.blog_id
-})
+app.use(serve("public"));
 
 app.use(router.routes())
 app.use(router.allowedMethods());
