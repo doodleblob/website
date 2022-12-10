@@ -39,6 +39,7 @@ html, body {
 }
 .continue {
   font-size: 8vh;
+  width: fit-content;
 }
 .continue:hover {
   color: #1db096;
