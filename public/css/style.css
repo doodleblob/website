@@ -1,3 +1,49 @@
-body {
-    background-color: lightblue;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Inter !important;
+}
+
+.navbar {
+  background-color: #2e2c3a;
+}
+.navbar .nav-link{
+  color: #FFFAFA;
+}
+.navbar .nav-link:hover{
+  color: #1db096;
+}
+.navbar-nav > li{
+  padding-left:7px;
+  padding-right:7px;
+}
+
+#home {
+  display: table;
+  height: calc(100% - 56px);
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+.landing-text {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.landing-text h1 {
+  font-size: 8vh;
+  margin-left:10px;
+  margin-right:10px;
+}
+.continue {
+  font-size: 8vh;
+}
+.continue:hover {
+  color: #1db096;
+}
+
+section {
+  padding: 80px 0;
+}
