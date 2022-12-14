@@ -1,13 +1,44 @@
 <html lang="en">
     
   <%- include('partials/head') %>
+  <link rel="stylesheet", href="css/error.css">
+  <script src="js/error.js"></script>
 
-  <body>
+
+  <body id="error-screen">
+  <!--
       <div id="home">
           <%= errorcode %>
           <%= errormessage %>
       </div>
+  -->
+    <div class="crt">
+      <div class="scanlines"></div>
+      <div class="screen">
+        <div id="bootuptext">
+          Copland OS Enterprise V1.4
+          <br><br>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Started Hold until boot process finishes up.</li>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Reached target Multi-User System.</li>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Reached target Graphical Interface.</li>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Started Process error reports when automatic reporting is enabled.</li>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Started Set console scheme.</li>
+          <li>[ <span style="color:rgb(2, 179, 2)">OK</span> ] Initialised IPv7 protocol.</li>
+          <li>[ <span style="color:rgb(226, 1, 1)">FAILED</span> ] Request Data from Wired.</li>
+        </div>
+        <div id="centre-container">
+          <div id="error-message">
+            <div id="errorheader" class="header">Error!</div>
+            <h1><%= errorcode %></h1>
+            <p><%= errormessage %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </body>
+
 
   <%- include('partials/foot') %>
 

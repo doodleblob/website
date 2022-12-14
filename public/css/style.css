@@ -12,6 +12,7 @@ section {
 
 /* navbar */
 .navbar {
+  z-index: 1000;
   background-color: #2e2c3a;
 }
 .navbar .nav-link{
