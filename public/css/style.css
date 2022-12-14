@@ -6,6 +6,11 @@ html, body {
   font-family: Inter !important;
 }
 
+section {
+  padding: 80px 0;
+}
+
+/* navbar */
 .navbar {
   background-color: #2e2c3a;
 }
@@ -20,6 +25,8 @@ html, body {
   padding-right:7px;
 }
 
+/* main page */
+/* -- splash */
 #home {
   display: table;
   height: calc(100% - 56px);
@@ -45,10 +52,7 @@ html, body {
   color: #1db096;
 }
 
-section {
-  padding: 80px 0;
-}
-
+/* -- skills */
 #skills {
   text-align: center;
   background-color: #2e2c3a;
@@ -62,7 +66,27 @@ section {
   height: 70px;
   width: 70px;
 }
+/* -- about */
+#about-img {
+  display: inline-block; 
+  position: relative; 
+  width: 300px; 
+  height: 300px; 
+  overflow: hidden; 
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background: url(../img/lain-wired.jpeg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
+}
+#about-img img {
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
+}
 
+/* footer */
 footer {
   width: 100%;
   background-color: #2e2c3a;
@@ -80,6 +104,7 @@ footer .fa:hover {
   color: #1db096;
 }
 
+/* mobile */
 @media (max-width: 768px) {
   .landing-text h1{
     font-size: 300%;
