@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
     <%- include('partials/head') %>
@@ -22,40 +23,32 @@
                     <div class="col-md-2 mr-auto ml-auto d-flex justify-content-center">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <!-- here is where they add the ICON -->
-                                <!-- <img src="..." alt="..." class="icon"> -->
-                                <h5 class="card-title">TODO</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p id="skill-icon"><img src="icon/cpp.png" alt="C++"></p>
+                                <h5 class="card-title">C++</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 mr-auto ml-auto  d-flex justify-content-center">
+                    <div class="col-md-2 mr-auto ml-auto d-flex justify-content-center">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <!-- here is where they add the ICON -->
-                                <!-- <img src="..." alt="..." class="icon"> -->
-                                <h5 class="card-title">TODO</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p id="skill-icon"><img src="icon/python.png" alt="Python"></p>
+                                <h5 class="card-title">Python</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 mr-auto ml-auto  d-flex justify-content-center">
+                    <div class="col-md-2 mr-auto ml-auto d-flex justify-content-center">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <!-- here is where they add the ICON -->
-                                <!-- <img src="..." alt="..." class="icon"> -->
-                                <h5 class="card-title">TODO</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p id="skill-icon"><img src="icon/git.png" alt="Git"></p>
+                                <h5 class="card-title">Git</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 mr-auto ml-auto  d-flex justify-content-center">
+                    <div class="col-md-2 mr-auto ml-auto d-flex justify-content-center">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <!-- here is where they add the ICON -->
-                                <!-- <img src="..." alt="..." class="icon"> -->
-                                <h5 class="card-title">TODO</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p id="skill-icon"><img src="icon/linux.png" alt="Linux"></p>
+                                <h5 class="card-title">Linux</h5>
                             </div>
                         </div>
                     </div>
@@ -68,13 +61,12 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <!-- another image can be inserted here -->
                         <!-- <img src="..." alt="..." class="img-fluid"/> -->
                     </div>
                     <div class="col-md-6">
                         <h1>About Me</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia tenetur reiciendis in quae, rem corporis id sequi debitis aliquam laudantium illum vel unde? Praesentium laboriosam neque eaque architecto maxime nihil?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia tenetur reiciendis in quae, rem corporis id sequi debitis aliquam laudantium illum vel unde? Praesentium laboriosam neque eaque architecto maxime nihil?</p>
+                        <p>Self-motivated and adaptable, with a keen interest in technology and security. Enjoys programming and tinkering with computer hardware as well as fixing and modifying cars and electronics.</p>
+                        <p>Can often be seen rock climbing, either outdoors or in a gym, as well as at local music venues.</p>
                 </div>
                 </div>
             </div>
@@ -121,12 +113,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 offset-md-3 text-center"> 
-                    <button type="button" class="btn btn-dark btn-lg">See all Projects</button>
+                    <a href="/projects">
+                        <button type="button" class="btn btn-dark btn-lg">See all Projects</button>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Blog section -->
+        <!-- Blog -->
         <section id="blog">
             <div class="container">
                 <div class="row blog">
@@ -167,27 +161,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 offset-md-3 text-center"> 
-                    <button type="button" class="btn btn-dark btn-lg">View Blog</button>
+                    <a href="/blog">
+                        <button type="button" class="btn btn-dark btn-lg">View Blog</button>
+                    </a>
                 </div>
             </div>
         </section>
         
-
-
-        <div id="fixed"></div>
-        
-        <footer class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <h3>Connect</h3>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-facebook"></a>
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </footer>
-
+        <%- include('partials/foot') %>
 
     </body>
 

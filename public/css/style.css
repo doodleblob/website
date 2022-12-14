@@ -33,7 +33,7 @@ html, body {
   vertical-align: middle;
 }
 .landing-text h1 {
-  font-size: 8vh;
+  font-size: 500%;
   margin-left:10px;
   margin-right:10px;
 }
@@ -47,4 +47,49 @@ html, body {
 
 section {
   padding: 80px 0;
+}
+
+#skills {
+  text-align: center;
+  background-color: #2e2c3a;
+}
+#skills .card {
+  height: fit-content;
+  width: 150px;
+  color: black;
+}
+#skills img {
+  height: 70px;
+  width: 70px;
+}
+
+footer {
+  width: 100%;
+  background-color: #2e2c3a;
+  padding: 5% 5% 10% 5%;
+  color: white;
+}
+footer .fa {
+  padding: 15px;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+footer .fa:hover {
+  text-decoration: none;
+  color: #1db096;
+}
+
+@media (max-width: 768px) {
+  .landing-text h1{
+    font-size: 300%;
+  }
+  footer .fa {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+
+
+
 }
