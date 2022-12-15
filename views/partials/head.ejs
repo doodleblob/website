@@ -24,9 +24,6 @@
 					<li class="nav-item">
 						<a class="nav-link" aria-current="page" href="/">Home</a></li>
 					<li class="nav-item">
-						<a class="nav-link" href="/#about">About</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="/projects">Projects</a>
 					</li>
 					<li class="nav-item">
@@ -44,6 +41,10 @@
 <script type="text/javascript">
 	function goToByScroll(id) 
 	{
-		$('html,body').animate({scrollTop: $("#"+id).offset().top}, 1, 'linear');
+		try {
+			$('html,body').animate({scrollTop: $("#"+id).offset().top}, 1, 'linear');
+		} catch (e) {
+			console.log(`Could not scroll to #${id}`)
+		}
 	}
 </script>

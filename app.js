@@ -28,9 +28,11 @@ app.use(async (ctx, next) => {
     await next()
     if (ctx.status === 404) ctx.throw(404)
   } catch (err) {
-    console.log(err.status)
     ctx.status = err.status || 500
-    console.log(err.message)
+    if (ctx.status >= 500) { // log server errors
+      console.log(err.status)
+      console.log(err.message)
+    }
     try {
       await ctx.render('error', { errorcode: ctx.status, errormessage: err.message })
     } catch (e) {
