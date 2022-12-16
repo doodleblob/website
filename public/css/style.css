@@ -45,6 +45,18 @@ section {
   margin-left:10px;
   margin-right:10px;
 }
+div#name span#a {
+  display: inline;
+}
+div#name:hover span#a {
+  display: none;
+}
+div#name span#b {
+  display: none;
+}
+div#name:hover span#b {
+  display: inline;
+}
 .continue {
   font-size: 8vh;
   width: fit-content;
