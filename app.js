@@ -4,6 +4,7 @@ const Koa = require('koa')
 const render = require('koa-ejs')
 const Router = require('@koa/router')
 const serve = require('koa-static')
+const mongoose = require('mongoose')
 
 const path = require('path')
 
@@ -15,6 +16,16 @@ const port = process.env.PORT || defaultPort
 
 const app = new Koa()
 const router = new Router()
+
+mongoose
+  .set('strictQuery', true)
+  .connect(
+    //'mongodb://portfolio-db:27017/portfolio-website', // dockerised
+    'mongodb://127.0.0.1:27017/portfolio-website', // running locally
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err))
 
 render(app, {
   root: path.join(__dirname, 'views'),
